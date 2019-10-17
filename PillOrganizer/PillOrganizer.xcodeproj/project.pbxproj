@@ -68,11 +68,14 @@
 			children = (
 				12808F3C235802F800563A0B /* AppDelegate.swift */,
 				12808F3E235802F800563A0B /* SceneDelegate.swift */,
+				12808F4A235802FB00563A0B /* Info.plist */,
+				12808F42235802F800563A0B /* Main.storyboard */,
+				12808F45235802FB00563A0B /* Assets.xcassets */,
+				12808F47235802FB00563A0B /* LaunchScreen.storyboard */,
 				12808F622358110C00563A0B /* Model */,
 				12808F672358117500563A0B /* Model Controller */,
 				12808F632358113F00563A0B /* Views */,
 				12808F642358114C00563A0B /* View Controllers */,
-				12808F68235811A800563A0B /* Resources */,
 			);
 			path = PillOrganizer;
 			sourceTree = "<group>";
@@ -109,17 +112,6 @@
 				12808F652358117000563A0B /* medsController.swift */,
 			);
 			path = "Model Controller";
-			sourceTree = "<group>";
-		};
-		12808F68235811A800563A0B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				12808F42235802F800563A0B /* Main.storyboard */,
-				12808F45235802FB00563A0B /* Assets.xcassets */,
-				12808F47235802FB00563A0B /* LaunchScreen.storyboard */,
-				12808F4A235802FB00563A0B /* Info.plist */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

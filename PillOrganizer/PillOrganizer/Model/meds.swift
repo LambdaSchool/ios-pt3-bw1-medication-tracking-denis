@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct Medication {
+    var name: String
+    var notes: String
+    
+    var date: date?
+}
