@@ -10,7 +10,15 @@ import UIKit
 
 class dailyMedsViewCell: UITableViewCell {
 
+    var meds: [Medication] = []
+    
     @IBOutlet weak var weekdayLabel: UILabel!
     
     @IBOutlet weak var numberOfMeds: UILabel!
+    
+    func createWeekDayMeds() -> [Medication]{
+        var tempMeds: [Medication] = []
+        let monday = 
+        
+    }
 }
