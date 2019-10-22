@@ -8,9 +8,11 @@
 
 import Foundation
 
-struct Medication {
-    var name: String
-    var notes: String
+struct Medication: Codable {
+    var name: String?
+    var notes: String?
     
-    var date: date?
+    var day: String?
+    var takeDaily: Bool = false
 }
+
