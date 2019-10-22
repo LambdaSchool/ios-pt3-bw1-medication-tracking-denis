@@ -1,5 +1,5 @@
 //
-//  addMedsViewController.swift
+//  DetailMedsViewController.swift
 //  PillOrganizer
 //
 //  Created by denis cedeno on 10/16/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class addMedsViewController: UIViewController {
+class DetailMedsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

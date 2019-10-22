@@ -7,20 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1238FA5723598C180095221D /* MedsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1238FA5623598C180095221D /* MedsTableViewCell.swift */; };
 		12808F3D235802F800563A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12808F3C235802F800563A0B /* AppDelegate.swift */; };
 		12808F3F235802F800563A0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12808F3E235802F800563A0B /* SceneDelegate.swift */; };
 		12808F44235802F800563A0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12808F42235802F800563A0B /* Main.storyboard */; };
 		12808F46235802FB00563A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12808F45235802FB00563A0B /* Assets.xcassets */; };
 		12808F49235802FB00563A0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12808F47235802FB00563A0B /* LaunchScreen.storyboard */; };
-		12808F5923580E8D00563A0B /* meds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12808F5823580E8D00563A0B /* meds.swift */; };
-		12808F5B23580EB000563A0B /* dailyMedsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12808F5A23580EB000563A0B /* dailyMedsViewCell.swift */; };
-		12808F5D23580EDF00563A0B /* weeklyMedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12808F5C23580EDF00563A0B /* weeklyMedsViewController.swift */; };
-		12808F5F235810DF00563A0B /* addMedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12808F5E235810DF00563A0B /* addMedsViewController.swift */; };
-		12808F61235810F800563A0B /* detailMedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12808F60235810F800563A0B /* detailMedsViewController.swift */; };
-		12808F662358117000563A0B /* medsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12808F652358117000563A0B /* medsController.swift */; };
+		12808F5923580E8D00563A0B /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12808F5823580E8D00563A0B /* Medication.swift */; };
+		12808F61235810F800563A0B /* DetailMedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12808F60235810F800563A0B /* DetailMedsViewController.swift */; };
+		12808F662358117000563A0B /* MedsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12808F652358117000563A0B /* MedsController.swift */; };
+		12E642FC2359690200554379 /* AddMedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E642FB2359690200554379 /* AddMedsViewController.swift */; };
+		12E6430023596AAC00554379 /* DailyMedsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E642FF23596AAC00554379 /* DailyMedsListTableViewController.swift */; };
+		12E64302235979DF00554379 /* DaysOfTheWeekTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E64301235979DF00554379 /* DaysOfTheWeekTableViewController.swift */; };
+		12E64304235982AC00554379 /* DaysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E64303235982AC00554379 /* DaysTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1238FA5623598C180095221D /* MedsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsTableViewCell.swift; sourceTree = "<group>"; };
 		12808F39235802F800563A0B /* PillOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12808F3C235802F800563A0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12808F3E235802F800563A0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,12 +31,13 @@
 		12808F45235802FB00563A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12808F48235802FB00563A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12808F4A235802FB00563A0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		12808F5823580E8D00563A0B /* meds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meds.swift; sourceTree = "<group>"; };
-		12808F5A23580EB000563A0B /* dailyMedsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dailyMedsViewCell.swift; sourceTree = "<group>"; };
-		12808F5C23580EDF00563A0B /* weeklyMedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weeklyMedsViewController.swift; sourceTree = "<group>"; };
-		12808F5E235810DF00563A0B /* addMedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addMedsViewController.swift; sourceTree = "<group>"; };
-		12808F60235810F800563A0B /* detailMedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailMedsViewController.swift; sourceTree = "<group>"; };
-		12808F652358117000563A0B /* medsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = medsController.swift; sourceTree = "<group>"; };
+		12808F5823580E8D00563A0B /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
+		12808F60235810F800563A0B /* DetailMedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMedsViewController.swift; sourceTree = "<group>"; };
+		12808F652358117000563A0B /* MedsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsController.swift; sourceTree = "<group>"; };
+		12E642FB2359690200554379 /* AddMedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedsViewController.swift; sourceTree = "<group>"; };
+		12E642FF23596AAC00554379 /* DailyMedsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMedsListTableViewController.swift; sourceTree = "<group>"; };
+		12E64301235979DF00554379 /* DaysOfTheWeekTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfTheWeekTableViewController.swift; sourceTree = "<group>"; };
+		12E64303235982AC00554379 /* DaysTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +87,7 @@
 		12808F622358110C00563A0B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				12808F5823580E8D00563A0B /* meds.swift */,
+				12808F5823580E8D00563A0B /* Medication.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -91,7 +95,8 @@
 		12808F632358113F00563A0B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				12808F5A23580EB000563A0B /* dailyMedsViewCell.swift */,
+				12E64303235982AC00554379 /* DaysTableViewCell.swift */,
+				1238FA5623598C180095221D /* MedsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -99,9 +104,10 @@
 		12808F642358114C00563A0B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				12808F5C23580EDF00563A0B /* weeklyMedsViewController.swift */,
-				12808F5E235810DF00563A0B /* addMedsViewController.swift */,
-				12808F60235810F800563A0B /* detailMedsViewController.swift */,
+				12E64301235979DF00554379 /* DaysOfTheWeekTableViewController.swift */,
+				12E642FF23596AAC00554379 /* DailyMedsListTableViewController.swift */,
+				12E642FB2359690200554379 /* AddMedsViewController.swift */,
+				12808F60235810F800563A0B /* DetailMedsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -109,7 +115,7 @@
 		12808F672358117500563A0B /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
-				12808F652358117000563A0B /* medsController.swift */,
+				12808F652358117000563A0B /* MedsController.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -185,14 +191,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12808F5923580E8D00563A0B /* meds.swift in Sources */,
-				12808F5F235810DF00563A0B /* addMedsViewController.swift in Sources */,
-				12808F5B23580EB000563A0B /* dailyMedsViewCell.swift in Sources */,
+				12808F5923580E8D00563A0B /* Medication.swift in Sources */,
+				12E6430023596AAC00554379 /* DailyMedsListTableViewController.swift in Sources */,
+				12E64302235979DF00554379 /* DaysOfTheWeekTableViewController.swift in Sources */,
 				12808F3D235802F800563A0B /* AppDelegate.swift in Sources */,
-				12808F662358117000563A0B /* medsController.swift in Sources */,
+				1238FA5723598C180095221D /* MedsTableViewCell.swift in Sources */,
+				12808F662358117000563A0B /* MedsController.swift in Sources */,
+				12E64304235982AC00554379 /* DaysTableViewCell.swift in Sources */,
 				12808F3F235802F800563A0B /* SceneDelegate.swift in Sources */,
-				12808F5D23580EDF00563A0B /* weeklyMedsViewController.swift in Sources */,
-				12808F61235810F800563A0B /* detailMedsViewController.swift in Sources */,
+				12808F61235810F800563A0B /* DetailMedsViewController.swift in Sources */,
+				12E642FC2359690200554379 /* AddMedsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = PillOrganizer/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -322,6 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = PillOrganizer/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -337,6 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34UT7X4PAU;
 				INFOPLIST_FILE = PillOrganizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -354,6 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34UT7X4PAU;
 				INFOPLIST_FILE = PillOrganizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
