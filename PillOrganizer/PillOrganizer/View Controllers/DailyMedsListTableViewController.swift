@@ -21,6 +21,7 @@ class DailyMedsListTableViewController: UITableViewController {
                 updateViews()
             }
         }
+    
         var meds: [Medication] = []
         
         override func viewDidLoad() {
@@ -30,26 +31,43 @@ class DailyMedsListTableViewController: UITableViewController {
         
         func updateViews() {
             guard isViewLoaded,
-            let medController = medController,
-                let day = day else {return}
+                let medController = medController,
+                    let day = day else {return}
             
             meds = medController.medication(forDay: day)
+            
             tableView.reloadData()
             title = day
         }
         
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailViewSegue" {
+            guard let vc = segue.destination as? DetailMedsViewController,
+                let indexPath = tableView.indexPathForSelectedRow else {return}
+            
+            let med = meds[indexPath.row]
+            vc.medication = med
+            
+        } else if segue.identifier == "addMedSegue" {
+            guard let vc = segue.destination as? AddMedsViewController else { return }
+            
+            vc.delegate = self
+        }
+    }
+    
         // MARK: - Table view data source
-
+    
+        override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+               return 100
+        }
+    
         override func numberOfSections(in tableView: UITableView) -> Int {
-
             return 1
         }
 
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            
             return meds.count
         }
-
 
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
@@ -59,6 +77,11 @@ class DailyMedsListTableViewController: UITableViewController {
             cell.meds = med
             return cell
         }
-        
-
     }
+
+extension DailyMedsListTableViewController: AddMedDelegate {
+func medWasAdded(_ med: Medication) {
+    medController?.addMeds(med: med)
+    tableView.reloadData()
+    }
+}

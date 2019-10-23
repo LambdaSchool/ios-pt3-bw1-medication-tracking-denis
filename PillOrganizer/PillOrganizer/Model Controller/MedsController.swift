@@ -13,7 +13,6 @@ class MedsController {
     private (set) var meds: [Medication] = []
     
        init(){
-           print("****this is dir:***** \(persistentFileURL!)")
            loadFromPersistentStore()
        }
 

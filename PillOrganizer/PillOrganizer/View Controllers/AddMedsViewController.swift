@@ -21,13 +21,14 @@ class AddMedsViewController: UIViewController {
     @IBOutlet weak var pickADaytextField: UITextField!
     @IBOutlet weak var addMedsNameTextField: UITextField!
     @IBOutlet weak var addNotesTextField: UITextField!
+    
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true)
     }
     @IBAction func saveButton(_ sender: Any) {
         guard let name = addMedsNameTextField.text,
-            let notes = addNotesTextField.text,
-            let day = pickADaytextField.text else {return}
+        let notes = addNotesTextField.text,
+        let day = pickADaytextField.text else {return}
         
         let med = Medication(name: name, notes: notes, day: day, takeDaily: true)
         delegate?.medWasAdded(med)
@@ -41,7 +42,7 @@ class AddMedsViewController: UIViewController {
         self.setupToHideKeyBoardOnTapOnView()
     }
     
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    let days = ["-------", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
     func createDayPicker() {
         let dayPicker = UIPickerView()
