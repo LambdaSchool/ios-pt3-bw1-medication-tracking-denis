@@ -10,21 +10,26 @@ import UIKit
 
 class DetailMedsViewController: UIViewController {
 
+    
+    @IBOutlet weak var medicationNameLabel: UILabel!
+    @IBOutlet weak var medicationNotesTextView: UITextView!
+    
+    var medication: Medication?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
+    private func updateViews() {
+        guard let medication = medication else { return }
+        print("\(medication)")
+        medicationNameLabel.text = medication.name
+        medicationNotesTextView.text = medication.notes
+    }
 
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
