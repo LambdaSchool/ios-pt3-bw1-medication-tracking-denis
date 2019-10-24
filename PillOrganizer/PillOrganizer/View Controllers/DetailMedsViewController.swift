@@ -10,7 +10,6 @@ import UIKit
 
 class DetailMedsViewController: UIViewController {
 
-    
     @IBOutlet weak var medicationNameLabel: UILabel!
     @IBOutlet weak var medicationNotesTextView: UITextView!
     
@@ -27,9 +26,5 @@ class DetailMedsViewController: UIViewController {
         medicationNameLabel.text = medication.name
         medicationNotesTextView.text = medication.notes
     }
-
-
-    // MARK: - Navigation
-
 
 }

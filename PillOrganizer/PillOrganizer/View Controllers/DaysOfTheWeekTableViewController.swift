@@ -22,23 +22,24 @@ class DaysOfTheWeekTableViewController: UITableViewController {
     }
     
     func updateViews() {
-               guard isViewLoaded else { return }
-        
-               tableView.reloadData()
-           }
+        guard isViewLoaded else { return }
+        tableView.reloadData()
+    }
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "MedListSegue" {
                 guard let vc = segue.destination as? DailyMedsListTableViewController,
-                let indexPath = tableView.indexPathForSelectedRow else { return }
+                    let indexPath = tableView.indexPathForSelectedRow else { return }
                 
                 let day = days[indexPath.row]
                 vc.medController = medsController
                 vc.day = day
+                vc.daysOfTheWeekTVC = self
 
               } else if segue.identifier == "addMedSegue" {
                   guard let vc = segue.destination as? AddMedsViewController else { return }
-                  vc.delegate = self
+                  
+                vc.delegate = self
             }
         
     }
@@ -48,6 +49,7 @@ class DaysOfTheWeekTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return days.count
     }
@@ -64,12 +66,10 @@ class DaysOfTheWeekTableViewController: UITableViewController {
     
 }
 
-
-
-    extension DaysOfTheWeekTableViewController: AddMedDelegate {
+extension DaysOfTheWeekTableViewController: AddMedDelegate {
         func medWasAdded(_ med: Medication) {
             medsController.addMeds(med: med)
             tableView.reloadData()
         }
         
-    }
+}

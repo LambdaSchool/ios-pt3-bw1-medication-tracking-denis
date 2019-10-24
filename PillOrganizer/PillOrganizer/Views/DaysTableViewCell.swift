@@ -11,16 +11,11 @@ import UIKit
 class DaysTableViewCell: UITableViewCell {
 
     var day: String? {
-        didSet {
-            setUpViews()
-        }
+        didSet { setUpViews() }
     }
     var numberOfMedications: Int? {
-        didSet {
-            setUpViews()
-        }
+        didSet { setUpViews() }
     }
-    
     
     @IBOutlet weak var weekdayLabel: UILabel!
     @IBOutlet weak var numberOfMedsLabel: UILabel!
@@ -31,8 +26,7 @@ class DaysTableViewCell: UITableViewCell {
             let numberOfMedications = numberOfMedications else { return }
         
         weekdayLabel.text = day
-        numberOfMedsLabel.text = "#\(numberOfMedications)"
-
+        numberOfMedsLabel.text = "\(numberOfMedications) 💊"
     }
 
 }

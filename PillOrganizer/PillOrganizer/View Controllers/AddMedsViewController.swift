@@ -15,8 +15,8 @@ protocol AddMedDelegate {
 class AddMedsViewController: UIViewController {
 
     var delegate: AddMedDelegate?
+    var dailyMedListTVC: DailyMedsListTableViewController?
     var selectedDay: String?
-    
     
     @IBOutlet weak var pickADaytextField: UITextField!
     @IBOutlet weak var addMedsNameTextField: UITextField!
@@ -25,6 +25,7 @@ class AddMedsViewController: UIViewController {
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true)
     }
+    
     @IBAction func saveButton(_ sender: Any) {
         guard let name = addMedsNameTextField.text,
         let notes = addNotesTextField.text,
@@ -32,6 +33,7 @@ class AddMedsViewController: UIViewController {
         
         let med = Medication(name: name, notes: notes, day: day, takeDaily: true)
         delegate?.medWasAdded(med)
+        dailyMedListTVC?.updateViews()
         dismiss(animated: true, completion: nil)
     }
 
@@ -68,19 +70,20 @@ class AddMedsViewController: UIViewController {
 }
 
 extension UIViewController{
-    func setupToHideKeyBoardOnTapOnView(){
+    func setupToHideKeyBoardOnTapOnView() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard(){
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
 }
 
-extension AddMedsViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+extension AddMedsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -97,6 +100,7 @@ extension AddMedsViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         selectedDay = days[row]
         pickADaytextField.text = selectedDay
     }
+    
 }
 
 
