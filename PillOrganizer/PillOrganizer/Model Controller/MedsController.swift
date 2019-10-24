@@ -12,41 +12,38 @@ class MedsController {
     
     private (set) var meds: [Medication] = []
     
-       init(){
+    init() {
            loadFromPersistentStore()
-       }
+    }
 
-       func addMeds(med: Medication) {
+    func addMeds(med: Medication) {
            meds.append(med)
            saveToPersistentStore()
-       }
+    }
        
-       func deleteMedsList(){
-           meds = []
-           saveToPersistentStore()
-       }
+    func deleteMed(medication: Medication) {
+        let medIndex = meds.firstIndex{ (medication) -> Bool in true }
+        meds.remove(at: medIndex!)
+        saveToPersistentStore()
+    }
     
     func medication(forDay day: String) -> [Medication] {
         return meds.filter { (medication) -> Bool in
-            return medication.day == day
+        return medication.day == day
         }
     }
     
 }
-
 
 extension MedsController {
     
     private var persistentFileURL: URL? {
         let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         let fileName = "MedicationList2.plist"
-        
         return dir?.appendingPathComponent(fileName)
-        
     }
     
-    
-    private func loadFromPersistentStore(){
+    private func loadFromPersistentStore() {
         do{
             guard let url = persistentFileURL else { return }
             let medsData = try Data(contentsOf: url)
@@ -56,9 +53,7 @@ extension MedsController {
         }
     }
     
-    
-    
-    private func saveToPersistentStore(){
+    private func saveToPersistentStore() {
         let medslistEncoder = PropertyListEncoder()
         do{
             let data = try medslistEncoder.encode(meds)
@@ -68,7 +63,5 @@ extension MedsController {
             NSLog("error saving to plist or writing data: \(error)")
         }
     }
-    
-    
     
 }

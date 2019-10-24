@@ -10,24 +10,25 @@ import UIKit
 
 class DailyMedsListTableViewController: UITableViewController {
     
-   var medController: MedsController? {
-            didSet{
-                updateViews()
-            }
+        var medController: MedsController? {
+            didSet{ updateViews() }
         }
-        
         var day: String? {
-            didSet{
-                updateViews()
-            }
+            didSet{ updateViews() }
         }
     
         var meds: [Medication] = []
-        
-        override func viewDidLoad() {
+        var daysOfTheWeekTVC: DaysOfTheWeekTableViewController?
+    
+    override func viewDidLoad() {
             super.viewDidLoad()
             updateViews()
         }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        daysOfTheWeekTVC?.updateViews()
+    }
         
         func updateViews() {
             guard isViewLoaded,
@@ -52,32 +53,46 @@ class DailyMedsListTableViewController: UITableViewController {
             guard let vc = segue.destination as? AddMedsViewController else { return }
             
             vc.delegate = self
+            vc.dailyMedListTVC = self
         }
     }
     
         // MARK: - Table view data source
     
-        override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
                return 100
-        }
+    }
     
-        override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
             return 1
-        }
+    }
 
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return meds.count
-        }
+    }
 
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "medsCell", for: indexPath) as? MedsTableViewCell else {return UITableViewCell()}
 
             let med = meds[indexPath.row]
             cell.meds = med
             return cell
-        }
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+           
+            let medToDelete = meds[indexPath.row]
+            medController?.deleteMed(medication: medToDelete)
+            meds.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+
+           
+          }
+    }
+    
+}
 
 extension DailyMedsListTableViewController: AddMedDelegate {
 func medWasAdded(_ med: Medication) {

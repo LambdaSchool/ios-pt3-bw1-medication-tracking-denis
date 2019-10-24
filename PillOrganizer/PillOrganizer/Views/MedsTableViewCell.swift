@@ -9,18 +9,17 @@
 import UIKit
 
 class MedsTableViewCell: UITableViewCell {
-
-   var meds: Medication? {
-            didSet {
-                setUpViews()
-            }
-        }
-        
-        @IBOutlet weak var medNameLabel: UILabel!
-        
-
-        private func setUpViews() {
-            guard let medication = meds else {return}
-            medNameLabel.text = medication.name
-        }
+    
+    var meds: Medication? {
+            didSet { setUpViews() }
     }
+        
+    @IBOutlet weak var medNameLabel: UILabel!
+        
+    private func setUpViews() {
+        guard let medication = meds else {return}
+            
+        medNameLabel.text = medication.name
+    }
+
+}
