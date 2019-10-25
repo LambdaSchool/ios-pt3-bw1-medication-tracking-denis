@@ -23,7 +23,6 @@ class MedsController {
        
     
     func deleteMed(medication: Medication) {
-        print("\(medication)")
         let medName = medication.name
         let medIndex = meds.firstIndex(where: {$0.name == medName})
         meds.remove(at: medIndex!)
