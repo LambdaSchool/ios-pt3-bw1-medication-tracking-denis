@@ -21,15 +21,18 @@ class MedsController {
            saveToPersistentStore()
     }
        
+    
     func deleteMed(medication: Medication) {
-        let medIndex = meds.firstIndex{ (medication) -> Bool in true }
+        print("\(medication)")
+        let medName = medication.name
+        let medIndex = meds.firstIndex(where: {$0.name == medName})
         meds.remove(at: medIndex!)
         saveToPersistentStore()
     }
     
     func medication(forDay day: String) -> [Medication] {
         return meds.filter { (medication) -> Bool in
-        return medication.day == day
+            return medication.day == day
         }
     }
     

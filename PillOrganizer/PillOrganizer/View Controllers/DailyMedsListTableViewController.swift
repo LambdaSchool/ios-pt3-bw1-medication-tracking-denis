@@ -83,9 +83,11 @@ class DailyMedsListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
            
-            let medToDelete = meds[indexPath.row]
-            medController?.deleteMed(medication: medToDelete)
+            let medToDelete = medController?.medication(forDay: day!)
+            let med = medToDelete?[indexPath.row]
             meds.remove(at: indexPath.row)
+            print("\(String(describing: med))")
+            medController?.deleteMed(medication: med!)
             tableView.deleteRows(at: [indexPath], with: .fade)
 
            
