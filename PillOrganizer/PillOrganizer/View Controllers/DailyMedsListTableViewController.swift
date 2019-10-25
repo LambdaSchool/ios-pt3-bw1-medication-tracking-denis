@@ -18,6 +18,7 @@ class DailyMedsListTableViewController: UITableViewController {
         }
     
         var meds: [Medication] = []
+    
         var daysOfTheWeekTVC: DaysOfTheWeekTableViewController?
     
     override func viewDidLoad() {

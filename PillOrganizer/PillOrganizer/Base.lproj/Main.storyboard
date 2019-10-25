@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MedTrack-->
+        <!--Pill Organizer-->
         <scene sceneID="1o8-0c-1ou">
             <objects>
                 <tableViewController id="g1h-ZG-TOh" customClass="DaysOfTheWeekTableViewController" customModule="PillOrganizer" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +60,7 @@
                             <outlet property="delegate" destination="g1h-ZG-TOh" id="7ds-sv-rSf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MedTrack" id="xzs-Ix-ENg">
+                    <navigationItem key="navigationItem" title="Pill Organizer" id="xzs-Ix-ENg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xv8-Q9-2B0">
                             <connections>
                                 <segue destination="0hf-tb-XI0" kind="presentation" identifier="addMedSegue" id="F3h-Da-xqz"/>
